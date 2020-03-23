@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:form="http://www.springframework.org/tags/form">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+
+<style>
+
+    html{
+        height: 100%;
+    }
+    body{
+        height: 100%;
+        margin: 0;
+        background-attachment: fixed;
+        background-image:linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)),
+        url("https://images.squarespace-cdn.com/content/v1/57717db42994cab508bc8753/1467120258820-F86Q7SOHHJHJVV3FZO6Y/ke17ZwdGBToddI8pDm48kDHPSfPanjkWqhH6pl6g5ph7gQa3H78H3Y0txjaiv_0foACs49-HBkG_F4C3fTziOyET3NMSLKe1L6oY3ac7Y3Qo30VleJc1LRfoxzh4NsZP8eSOYnNd9sCB8xjAo8q6BoQdcEJVWFuN6epNacvd7MH1CDqtZ4ES_PJfUPrnUxVK0nDcTZornvT1UwVFTif7KQ/image-asset.png");
+        background-repeat: no-repeat;
+        background-size:cover;
+        font-family: "Univia Pro Book";
+
+
+    }
+
+    .container{
+
+        padding: 50px;
+        margin: auto;
+        width: 60%;
+        border: 3px solid #73AD21;
+        padding: 10px;
+
+        text-align:center;
+
+
+    }
+
+
+    form {
+        padding: 40px;
+        margin:auto;
+        display: grid;
+        grid-column: auto;
+        grid-template-columns: 1fr;
+        grid-gap:2px;
+        width:40%;
+        
+        font-family: "Univia Pro Book";
+        font-size: 15px;
+        color:gray(12%);
+    }
+    .btn{
+        background: greenyellow;
+        color:darkgreen;
+        border: 0px;
+        width:auto;
+        height: auto;
+        padding: 3px;
+        border-radius: 12px;
+
+
+    }
+    .btn:hover{
+        cursor:pointer;
+        background:transparent;
+        color:greenyellow;
+        border: 2px greenyellow;
+
+
+
+
+    }
+
+    input{
+        font-family: "Univia Pro Medium";
+
+    }
+
+    h2{
+        font-family: "Univia Pro Medium";
+        color:white;
+        text-transform: uppercase;
+        text-align:center;
+
+
+    }
+    h2:hover{
+        color:greenyellow;
+
+    }
+    .terms{
+        text-align:center;
+        color:white;
+        align-content: center;
+        margin: auto;
+
+
+    }
+    p{
+
+        color: white;
+    }
+
+
+</style>
+
+
+<h2>Please Register</h2>
+<div class="container">
+    <form action="/register"  method="post">
+        <input type="text" name="username" placeholder="Username"/>
+       <p th:text>${message}</p>
+         <input type="text" name="password" placeholder="Password" />
+        <p th:text>${message}</p>
+        <input type="text" name="email" placeholder="Email"/>
+        <p th:text>${message}</p>
+
+        <input class="btn" type="submit" value="Register"/>
+        <input class="terms" type="checkbox" name="accepted"/>
+        <p class="terms">Accept Terms & Conditions</p>
+        <p th:text>${message}</p>
+
+    </form>
+
+</div>
+
+
+</body>
+</html>
